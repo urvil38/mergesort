@@ -20,7 +20,7 @@ func TestHandler(t *testing.T) {
 
 	for _,c := range cases {
 		var equal = true
-		sorted := Mergesort(c.in)
+		sorted := Sort(c.in)
 		for i := range c.in {
 			if sorted[i] != c.out[i] {
 				equal = false
@@ -36,7 +36,7 @@ func BenchmarkHandler(b *testing.B) {
 	var equal = true
 	s := []int{2,9,3,7,-8,-64,-415}
 	for i := 0 ; i < b.N ; i++ {
-		sorted := Mergesort(s)
+		sorted := Sort(s)
 		expected := []int{-415,-64,-8,2,3,7,9}
 		for i := range s {
 			if sorted[i] != expected[i] {

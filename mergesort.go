@@ -1,13 +1,13 @@
 package mergesort
 
 //Mergesort function sort a array pass as a argument
-func Mergesort(s []int) []int {
+func Sort(s []int) []int {
 	if len(s) <= 1 {
 		return s
 	}
 	mid := len(s) / 2
-	l := Mergesort(s[:mid])
-	r := Mergesort(s[mid:])
+	l := Sort(s[:mid])
+	r := Sort(s[mid:])
 	res := merge(l,r)
 	return res 
 }
