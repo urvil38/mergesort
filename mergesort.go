@@ -1,6 +1,6 @@
 package mergesort
 
-//Mergesort function sort a array pass as a argument
+//Sort function sort a array pass as a argument
 func Sort(s []int) []int {
 	if len(s) <= 1 {
 		return s
