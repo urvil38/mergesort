@@ -1,8 +1,5 @@
-package main
+package mergesort
 
-import (
-	"fmt"
-)
 //Mergesort function sort a array pass as a argument
 func Mergesort(s []int) []int {
 	if len(s) <= 1 {
@@ -33,12 +30,4 @@ func merge(l,r []int) []int {
 		}
 	}
 	return res
-}
-
-func main() {
-	s := make([]int,0,2000)
-	for i := 2000 ; i > 0 ; i-- {
-		s = append(s,i)
-	}
-	fmt.Printf("sortrd :%v",Mergesort(s))
 }
