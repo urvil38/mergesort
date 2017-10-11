@@ -1,6 +1,7 @@
-package mergesort
+package mergesort_test
 
 import (
+	"mergesort"
 	"testing"
 	)
 func TestHandler(t *testing.T) {
@@ -16,11 +17,14 @@ func TestHandler(t *testing.T) {
 		{
 			[]int{9,0,-100,-4},[]int{-100,-4,0,9},
 		},
+		{
+			[]int{0,-1},[]int{-1,0},
+		},
 	}
 
 	for _,c := range cases {
 		var equal = true
-		sorted := Sort(c.in)
+		sorted := mergesort.Sort(c.in)
 		for i := range c.in {
 			if sorted[i] != c.out[i] {
 				equal = false
@@ -36,7 +40,7 @@ func BenchmarkHandler(b *testing.B) {
 	var equal = true
 	s := []int{2,9,3,7,-8,-64,-415}
 	for i := 0 ; i < b.N ; i++ {
-		sorted := Sort(s)
+		sorted := mergesort.Sort(s)
 		expected := []int{-415,-64,-8,2,3,7,9}
 		for i := range s {
 			if sorted[i] != expected[i] {
